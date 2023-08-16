@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleImportanceOf } from "../reducers/noteReducer";
-
 const Note = ({ note, handleClick }) => {
   return (
     <li onClick={handleClick}>
@@ -17,11 +16,14 @@ const Notes = () => {
   let notesToShow;
   switch (filter) {
     case "IMPORTANT":
-       notesToShow = notes.filter((note) => note.important); break;
+      notesToShow = notes.filter((note) => note.important);
+      break;
     case "NONIMPORTANT":
-       notesToShow = notes.filter((note) => !note.important); break;
+      notesToShow = notes.filter((note) => !note.important);
+      break;
     default:
-        notesToShow = notes; break;
+      notesToShow = notes;
+      break;
   }
 
   return (
